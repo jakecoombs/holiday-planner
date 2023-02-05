@@ -1,12 +1,14 @@
 import React from "react";
 import { GetServerSideProps } from "next";
-import { useSession, getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import prisma from "../lib/prisma";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-  const session = await getSession({ req });
+  const session = await getServerSession(req, res, authOptions);
 
   if (!session) {
     res.statusCode = 403;
@@ -35,8 +37,6 @@ type Props = {
 
 const Drafts: React.FC<Props> = (props) => {
   const { data: session } = useSession();
-
-  console.log("Session:", session);
 
   if (!session) {
     return (
