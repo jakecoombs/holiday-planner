@@ -1,3 +1,7 @@
-# Fullstack Authentication Example with Next.js and NextAuth.js
+# [Holiday Planner](https://calendar.jakecoombs.com/)
 
-This is the starter project for the fullstack tutorial with Next.js and Prisma. You can find the final version of this project in the [`final`](https://github.com/prisma/blogr-nextjs-prisma/tree/final) branch of this repo.
+![Vercel](https://vercelbadge.vercel.app/api/jakecoombs/holiday-planner)
+
+## Introduction
+
+A simple web application, built using Next.js and Prisma, using Vercel for deployment, to help groups plan holidays.
